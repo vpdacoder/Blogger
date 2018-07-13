@@ -63,7 +63,16 @@ var bodyParser       = require('body-parser'),
     })
 
 
-
+    //SHOW ROUTE
+    app.get("/blogs/:id", function(req,res){
+      Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+          res.redirect("/blogs");
+        } else {
+          res.render("show", {blog:foundBlog});
+        }
+      })
+    });
 
 
 
