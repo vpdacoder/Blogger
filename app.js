@@ -56,6 +56,10 @@ var bodyParser       = require('body-parser'),
     });
 
 
+  //NEW ROUTE
+  app.get("/blogs/new", function(req,res){
+    res.render("new");
+  });
 
 
 
